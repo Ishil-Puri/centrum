@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>89818437247-rdi5o67d2stp644q8rk0m9k9t4san5rg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.89818437247-rdi5o67d2stp644q8rk0m9k9t4san5rg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAFpKI4nvt8tIQ4dm62MCygAzsEod24vKQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>89818437247</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.puri.centrum</string>
+	<key>PROJECT_ID</key>
+	<string>centrum-f7214</string>
+	<key>STORAGE_BUCKET</key>
+	<string>centrum-f7214.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:89818437247:ios:565306dd43369629</string>
+	<key>DATABASE_URL</key>
+	<string>https://centrum-f7214.firebaseio.com</string>
+</dict>
+</plist>
