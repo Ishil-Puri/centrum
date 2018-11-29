@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lMA-SD-Mv9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lMA-SD-Mv9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="210" id="eCL-p9-35h"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions: Scan ID and info will show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-IO-pZa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions: Scan ID and info will show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-IO-pZa">
                                 <rect key="frame" x="39" y="179" width="297" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="pro-ur-49J"/>
@@ -35,34 +35,63 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Tj-6ew">
-                                <rect key="frame" x="135" y="231" width="105" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-Tj-6ew" userLabel="Asb Btn">
+                                <rect key="frame" x="39" y="231" width="105" height="65"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.16534674657534246" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="4Nc-Fw-V29"/>
                                     <constraint firstAttribute="width" constant="105" id="7mA-4K-oOI"/>
                                     <constraint firstAttribute="height" constant="65" id="jqh-rR-5bJ"/>
                                 </constraints>
-                                <state key="normal" title="Scan ID"/>
+                                <state key="normal" title="w/ASB"/>
                                 <connections>
-                                    <action selector="handleScanPresent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="paq-9z-b4G"/>
+                                    <action selector="asb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIe-Pd-IzT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajq-Ix-xoq">
+                                <rect key="frame" x="135" y="381" width="105" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="Ii8-Tz-xmG" kind="show" id="t4G-kF-bIn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search function for admin only!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs1-3k-KCv">
+                                <rect key="frame" x="39" y="362" width="287" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-WI-WNE">
+                                <rect key="frame" x="231" y="231" width="105" height="65"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.16534674660000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="SxZ-pQ-XQ0"/>
+                                    <constraint firstAttribute="width" constant="105" id="fbO-VP-VOn"/>
+                                </constraints>
+                                <state key="normal" title="NO asb"/>
+                                <connections>
+                                    <action selector="noAsb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hrO-8a-3x0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rhr-Tj-6ew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="0ee-aW-lxz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dK9-WI-WNE" secondAttribute="trailing" constant="39" id="DM0-vH-wpq"/>
+                            <constraint firstItem="dK9-WI-WNE" firstAttribute="top" secondItem="0Wn-IO-pZa" secondAttribute="bottom" constant="26" id="Jd2-F9-fCJ"/>
                             <constraint firstItem="Rhr-Tj-6ew" firstAttribute="top" secondItem="0Wn-IO-pZa" secondAttribute="bottom" constant="26" id="KiG-mg-Zkx"/>
                             <constraint firstItem="hNR-uv-e2q" firstAttribute="centerX" secondItem="0Wn-IO-pZa" secondAttribute="centerX" id="ef1-84-UG2"/>
                             <constraint firstItem="0Wn-IO-pZa" firstAttribute="top" secondItem="hNR-uv-e2q" secondAttribute="bottom" constant="11" id="kAX-nc-BUk"/>
                             <constraint firstItem="hNR-uv-e2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sJP-Kz-MmS"/>
-                            <constraint firstItem="hNR-uv-e2q" firstAttribute="centerX" secondItem="Rhr-Tj-6ew" secondAttribute="centerX" id="sSr-Ia-pgx"/>
                             <constraint firstItem="hNR-uv-e2q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ylH-zi-FH4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PZ4-gw-NLo"/>
                     <connections>
-                        <outlet property="scanBtn" destination="Rhr-Tj-6ew" id="bVh-te-bqV"/>
+                        <outlet property="asbBtn" destination="Rhr-Tj-6ew" id="g2F-nF-IdA"/>
+                        <outlet property="noAsbBtn" destination="dK9-WI-WNE" id="dDo-kN-hP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,9 +105,53 @@
                     <view key="view" contentMode="scaleToFill" id="RGi-ci-hLL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-V8-KSN">
+                                <rect key="frame" x="158" y="20" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZv-iL-a6p">
+                                <rect key="frame" x="139" y="77" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Query" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phf-PQ-Nq7">
+                                <rect key="frame" x="139" y="200" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Results of Query:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="adJ-ed-msu">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Js-PJM">
+                                <rect key="frame" x="172" y="238" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goPressed:" destination="Ii8-Tz-xmG" eventType="touchUpInside" id="Vog-3p-gsg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uqv-kh-DoD"/>
                     </view>
+                    <connections>
+                        <outlet property="goBtn" destination="ZM2-Js-PJM" id="OtC-z0-8G1"/>
+                        <outlet property="outputTxtView" destination="adJ-ed-msu" id="WgL-Ve-6yL"/>
+                        <outlet property="psswdTxt" destination="OZv-iL-a6p" id="9i0-Mn-BUw"/>
+                        <outlet property="queryTxt" destination="phf-PQ-Nq7" id="ojV-ra-Vv1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUX-FM-K0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

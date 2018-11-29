@@ -8,23 +8,46 @@
 
 import UIKit
 import BarcodeScanner
+import Firebase
+import FirebaseDatabase
 
-class MainVC: UIViewController {
+class MainVC: UIViewController
+{
 
-    @IBOutlet weak var scanBtn: UIButton!
+    @IBOutlet weak var asbBtn: UIButton!
+    @IBOutlet weak var noAsbBtn: UIButton!
     
-    override func viewDidLoad() {
+    var ref: DatabaseReference!
+    
+    var asbValue: Bool!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        
+    }
+    @IBAction func asb(_ sender: Any) {
+        asbValue = true;
+        handleScanPresent()
     }
     
-    @IBAction func handleScanPresent(_ sender: Any) {
+    @IBAction func noAsb(_ sender: Any) {
+        asbValue = false;
+        handleScanPresent()
+    }
+    
+    
+    private func handleScanPresent()
+    {
         let viewController = makeBarcodeScannerViewController()
         viewController.title = "ID Scanner"
         present(viewController, animated: true, completion: nil)
     }
     
     
-    private func makeBarcodeScannerViewController() -> BarcodeScannerViewController {
+    private func makeBarcodeScannerViewController() -> BarcodeScannerViewController
+    {
         let viewController = BarcodeScannerViewController()
         viewController.codeDelegate = self
         viewController.errorDelegate = self
@@ -32,11 +55,22 @@ class MainVC: UIViewController {
         return viewController
     }
     
-    private func evaluateID(idValue:String, _ controller: BarcodeScannerViewController){
+    private func evaluateID(idValue:String, _ controller: BarcodeScannerViewController)
+    {
         controller.dismiss(animated: true, completion: nil)
-        let alert = UIAlertController(title: "\(idValue)", message: "😁", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        setData(idValue: idValue);
+        //sends completion alert
+//        let alert = UIAlertController(title: "\(idValue)", message: "😁", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func setData(idValue: String)
+    {
+        ref?.child("wbAttendees").child(idValue).child("wbTicketStatus").setValue("paid")
+        ref?.child("wbAttendees").child(idValue).child("ASB").setValue(asbValue)
+        
+        
     }
 }
 

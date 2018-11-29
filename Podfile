@@ -5,5 +5,7 @@ target 'centrum' do
 
   # Pods for centrum
   pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'FirebaseUI/Database'
   pod 'BarcodeScanner'
 end
